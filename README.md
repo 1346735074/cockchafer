@@ -27,3 +27,15 @@
 - 实时计算(spark flink DataWorks)
 - Ai动态分析学习(Tensorflow 机器学习PAI)
 - 买入卖出
+
+# 模块划分
+服务名称 | 功能 | 语言/实现
+--- | --- | ---
+DataCollect | 数据抓取 | Python
+MessageWarning | 告警 | Java
+IntelligenceCenter | 智能算法 | Tensorflow/Flink/机器学习PAI
+RobotTrading | 机器交易 | Java/其他
+DataChart | 图表 | dataV/其他
+
+# 模型图
+![License](jdhj.png)
