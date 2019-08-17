@@ -34,6 +34,7 @@ class JD_crawl:
 
         auth_page = self.session.post(self.auth_url,
                                       data={'loginName': self.username, 'nloginpwd': self.password}).text
+        # 是否需要验证码
         if 'true' in auth_page:
             auth_code_url = soup.select('#JD_Verification1')[0].get('src2')
             auth_code = str(self.get_auth_img(auth_code_url))
@@ -55,6 +56,7 @@ class JD_crawl:
             }
         return data
 
+    # 验证码获取输入
     def get_auth_img(self, url):
         auth_code_url = 'http:{}&yys={}'.format(url, str(int(time.time()*1000)))
         auth_img = self.session.get(auth_code_url, headers=self.headers)
@@ -85,8 +87,9 @@ class JD_crawl:
 
 
 if __name__ == '__main__':
-    un = input('请输入京东账号：')
-    pwd = input('请输入京东密码：')
-    jd = JD_crawl(un, pwd)
+    # un = input('请输入京东账号：')
+    # pwd = input('请输入京东密码：')
+    # jd = JD_crawl(un, pwd)
+    jd = JD_crawl(11111, 11111)
     jd.login()
-    jd.shopping()
+    # jd.shopping()
